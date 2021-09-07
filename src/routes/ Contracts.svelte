@@ -1,9 +1,10 @@
 <script>
+    import { Col, Container, Row } from 'sveltestrap';
 
-     export let titles = [
-      { id: 'J---aiyznGQ', name: 'Договор купли продпжи', desc: 'Текст договора', },
-      { id: 'z_AbfPXTKms', name: 'Договор на оказание услуг', desc: 'Текст договора 2' },
-      { id: 'OUtn3pvWmpg', name: 'Договор №652344', desc: 'Текст договора 3' }
+     export let contracts = [
+      { id: 'J---aiyznGQ', name: 'Договор купли продпжи', desc: 'Текст договора', isActive: 'true'},
+      { id: 'z_AbfPXTKms', name: 'Договор на оказание услуг', desc: 'Текст договора 2',  isActive: 'false'},
+      { id: 'OUtn3pvWmpg', name: 'Договор №652344', desc: 'Текст договора 3', isActive: 'false' }
   ];
 
  
@@ -11,7 +12,7 @@
 
 
 <div class="row">
-    <div class="col-md">
+    <div class="col col-md">
         <main>
             <input type="checkbox" id="nav-toggle" hidden>
         
@@ -25,7 +26,7 @@
         
                 <div class="nav-items">
                     <ul >
-                        <li><a href="#/cotractpage/">Договора</a>
+                        <li class="active"><a href="#/cotractpage/">Договора</a>
                         <li><a href="#2">Кантрагенты</a>
                         <li><a href="#3">Еще что-то</a>
             
@@ -36,17 +37,17 @@
         </main>
     </div>
 
-    <div class="col-md">
+    <div class="col col-md ">
         
             
         
         
         <div class="wrapper">
             <div class="contracts">
-                {#each titles as title, i }
+                {#each contracts as contract, i }
         
                     <h3><ul>
-                        <li><a href="">{title.name}</a></li>
+                        <li><a href="">{contract.name}</a></li>
                     </ul></h3>
         
         
@@ -93,6 +94,17 @@
 	border:1px solid darkblue;
 	height: 200px;
     padding-left: 15px;
+	
+}
+
+.contracts li{
+	list-style: none;
+	
+}
+
+.contracts li a{
+    color: white;
+    text-decoration: none;
 	
 }
 

@@ -9,7 +9,7 @@
 <Router routes={{
     '/': Home,
 	'/signin/': Signin,
-	'/registry/': Registry,
+	
 	'/cotractpage/': Contracts
 }} />
 
