@@ -23,6 +23,12 @@ Install the dependencies...
 ```bash
 cd svelte-app
 npm install
+npm install --save sirv-cli
+npm install bootstrap
+npm install jquery
+npm install --save sveltestrap svelte
+npm install svelte-spa-router
+
 ```
 
 ...then start [Rollup](https://rollupjs.org):
