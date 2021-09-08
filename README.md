@@ -6,7 +6,7 @@
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd pharmui
 npm install
 npm install --save sirv-cli
 npm install bootstrap
