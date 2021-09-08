@@ -41,7 +41,7 @@
     -webkit-transition: left 0.3s;
     -moz-transition: left 0.3s;
     transition: left 0.3s;
-    background: #16a085;
+    background: #d30a12;
     z-index: 2000;
 }
 

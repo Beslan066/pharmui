@@ -1,7 +1,8 @@
 <script>
-    import { Col, Container, Row } from 'sveltestrap';
 
-     export let contracts = [
+    let current = 'foo';
+
+    export let titles = [
       { id: 'J---aiyznGQ', name: 'Договор купли продпжи', desc: 'Текст договора', isActive: 'true'},
       { id: 'z_AbfPXTKms', name: 'Договор на оказание услуг', desc: 'Текст договора 2',  isActive: 'false'},
       { id: 'OUtn3pvWmpg', name: 'Договор №652344', desc: 'Текст договора 3', isActive: 'false' }
@@ -44,14 +45,19 @@
         
         <div class="wrapper">
             <div class="contracts">
-                {#each contracts as contract, i }
+
+                    {#each titles as title, i }
+            
+                        <h3><ul>
+                            <li><a href="#" class:active={title.isActive == true }  
+                                on:click|preventDefault="{() => title.isActive = true}">
+                                {title.name}</a>
+                            </li>
+                        </ul></h3>
+
+                    {/each}
+                
         
-                    <h3><ul>
-                        <li><a href="">{contract.name}</a></li>
-                    </ul></h3>
-        
-        
-            {/each}
             </div>
         </div>
         
@@ -59,7 +65,7 @@
         <div class="wrapper">
             <div class="card card-2">
                 <div class="container container-2">
-                    <h2><a href="">a1</a></h2>
+                    <h2><a href="#">a1</a></h2>
                     <p>a2</p>
                 </div>
             </div>
@@ -70,6 +76,11 @@
 
 
 <style>
+
+.contracts .active {
+		background-color: #ff3e00;
+		color: white;
+	}
 
     .row {
         height: 1000px;
@@ -103,7 +114,7 @@
 }
 
 .contracts li a{
-    color: white;
+    color: #333;
     text-decoration: none;
 	
 }
@@ -145,7 +156,7 @@ main {
         -webkit-transition: left 0.3s;
         -moz-transition: left 0.3s;
         transition: left 0.3s;
-        background: #16a085;
+        background: #d30a12;
         z-index: 2000;
     }
 
