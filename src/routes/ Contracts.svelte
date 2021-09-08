@@ -1,13 +1,13 @@
 <script>
 
-    let current = 'foo';
-
     export let titles = [
-      { id: 'J---aiyznGQ', name: 'Договор купли продпжи', desc: 'Текст договора', isActive: 'true'},
+      { id: 'J---aiyznGQ', name: 'Договор купли продажи', desc: 'Текст договора', isActive: 'false'},
       { id: 'z_AbfPXTKms', name: 'Договор на оказание услуг', desc: 'Текст договора 2',  isActive: 'false'},
       { id: 'OUtn3pvWmpg', name: 'Договор №652344', desc: 'Текст договора 3', isActive: 'false' }
   ];
 
+
+ 
  
 </script>
 
@@ -44,21 +44,26 @@
         
         
         <div class="wrapper">
+
             <div class="contracts">
+                        
+                {#each titles as title, i }
 
-                    {#each titles as title, i }
+                    <ul>
+                        <li><a href="#" class:active={title.isActive === 'true' ? 'active' : '' }  
+                            on:click|preventDefault="{() => title.isActive = 'true'}">
+                            {title.name}</a>
+                        </li>
+                    </ul>
+                        
+                        
+                {/each}
+            </div>
             
-                        <h3><ul>
-                            <li><a href="#" class:active={title.isActive == true }  
-                                on:click|preventDefault="{() => title.isActive = true}">
-                                {title.name}</a>
-                            </li>
-                        </ul></h3>
-
-                    {/each}
+                       
                 
         
-            </div>
+        
         </div>
         
         
